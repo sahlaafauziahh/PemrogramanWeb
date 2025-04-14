@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Pengguna</title>
+    <link rel="stylesheet" href="/css/tag-form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Profile Pengguna</h1>
+        <div class="profile-card">
+            <h2 id="profile-name">Nama Pengguna</h2>
+            <p><strong>Tanggal Lahir:</strong> <span id="profile-tanggal_lahir"></span></p>
+            <p><strong>Jenis Kelamin:</strong> <span id="profile-jenis_kelamin"></span></p>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p><strong>Alamat:</strong> <span id="profile-alamat"></span></p>
+        </div>
+        <a href="index.html"><button>Kembali ke Form</button></a>
+    </div>
+
+    <script>
+        // Ambil data dari LocalStorage
+        const userData = JSON.parse(localStorage.getItem("userProfile"));
+
+        // Jika ada data, tampilkan di halaman
+        if (userData) {
+            document.getElementById("profile-name").textContent = userData.name;
+            document.getElementById("profile-tanggal_lahir").textContent = userData.birthdate;
+            document.getElementById("profile-jenis_kelamin").textContent = userData.gender;
+            document.getElementById("profile-email").textContent = userData.email;
+            document.getElementById("profile-alamat").textContent = userData.address;
+        } else {
+            document.querySelector(".container").innerHTML = "<h2>Data tidak ditemukan. Silakan isi biodata terlebih dahulu di <a href='index.html'>halaman ini</a>.</h2>";
+        }
+    </script>
+</body>
+</html>
