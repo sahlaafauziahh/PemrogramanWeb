@@ -1,0 +1,16 @@
+@startuml
+start
+:Supir membuka halaman login;
+:Masukkan username dan password;
+if (Data valid?) then (yes)
+  :Masuk ke dashboard;
+  :Tampilkan jadwal kerja supir;
+  :Supir pilih absensi;
+  :Catat waktu absensi (masuk/keluar);
+  :Simpan data absensi ke database;
+  stop
+else (no)
+  :Tampilkan pesan error login;
+  stop
+endif
+@enduml

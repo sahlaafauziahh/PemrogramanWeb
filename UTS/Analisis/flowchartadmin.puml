@@ -1,0 +1,21 @@
+@startuml
+start
+
+:Admin login ke sistem;
+
+if (Login berhasil?) then (Ya)
+  :Tampilkan dashboard admin;
+  :Pilih menu "Kelola Data Supir";
+  :Tambah / Ubah / Hapus data supir;
+  :Simpan perubahan;
+
+  :Pilih menu "Atur Jadwal Kerja";
+  :Input jadwal kerja supir berdasarkan hari dan jam;
+  :Simpan jadwal;
+  stop
+else (Tidak)
+  :Tampilkan pesan error login;
+  stop
+endif
+
+@enduml

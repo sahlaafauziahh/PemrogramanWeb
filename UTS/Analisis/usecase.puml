@@ -1,0 +1,17 @@
+@startuml
+
+left to right direction
+actor Admin
+actor Supir
+
+rectangle "Sistem Pendataan Supir Angkot" {
+    Admin --> (Login)
+    Admin --> (Kelola Data Supir)
+    Admin --> (Atur Jadwal Kerja)
+    Admin --> (Lihat Laporan Absensi dan Jadwal)
+    
+    Supir --> (Login)
+    Supir --> (Lihat Jadwal Kerja)
+    Supir --> (Lakukan Absensi Online)
+}
+@enduml
